@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,700&family=Bodoni+Moda:wght@400;900&family=Lato:wght@400;700&family=Poppins:wght@100;400;700&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero {
+  height: 120vh;
+  width: 100vw;
+  background: rgb(2, 0, 36);
+  background: url("https://thumbs.gfycat.com/HairyQueasyAcouchi-max-1mb.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-wrapper {
+  width: max-content;
+}
+
+.taskInput {
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.addBtn {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.box-warpper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.openSection,
+.progressSection,
+.reviewSection,
+.doneSection {
+  text-align: center;
+  overflow: auto;
+  width: 200px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 10px;
+  padding: 10px;
+}
+h3 {
+  color: white;
+
+  background-color: #42464241;
+  padding: 10px;
+  border-radius: 10px;
+}
+.textBox {
+  text-align: left;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid;
+  background-color: #ffffff;
+  font-family: Arial;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+.subBtn {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.openSection-ul {
+  list-style-type: none;
+}
+#modalBox {
+  height: 250px;
+  width: 500px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #da9797;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+#modalBox h2 {
+  margin-bottom: 10px;
+}
+#modalBox textarea {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+#modalBox button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#modalBox button.closeBtn {
+  background-color: #f44336;
+}
+#heading {
+  color: white;
+  margin: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 8px 8px 32px 0 rgba(31, 38, 135, 0.549);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 25px;
+}
+
+#delete {
+  background-color: red;
+  padding: 4px 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.container {
+  height: 80%;
+}
+.drag {
+  text-align: left;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid;
+  background-color: #2c2a2a;
+  font-family: Arial;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+  display: flex;
+  justify-content: space-between;
+}
+.how {
+  color: white;
+  width: 60%;
+  font-size: small;
+  height: auto;
+  text-align: center;
+  background-color: #2c2a2a;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.how h3 {
+  background-color: #2c2a2a;
+}
+.hidden {
+  display: none;
+}
+#toggleHowButton {
+  background: transparent;
+  color: #fff;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  padding: 20px 30px;
+  perspective: 30rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
+}
+#toggleHowButton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    320deg,
+    rgba(0, 140, 255, 0.678),
+    rgba(128, 0, 128, 0.308)
+  );
+  z-index: 1;
+  transition: background 3s;
+}
+
+#toggleHowButton:hover::before {
+  animation: rotate 1s;
+  transition: all 0.5s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.note {
+  color: #f44336;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.done {
+  padding: 8px 16px;
+  background-color: #af4c4c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.progressSection,
+.reviewSection,
+.doneSection {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Styles for mobile devices */
+  .openSection,
+  .progressSection,
+  .reviewSection,
+  .doneSection {
+    width: 50vw;
+    height: auto;
+    margin: 5px;
+  }
+
+  .taskInput {
+    width: 100%;
+  }
+
+  .box-warpper {
+    flex-direction: column;
+  }
+
+  .task-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Styles for tablets */
+  .openSection,
+  .progressSection,
+  .reviewSection,
+  .doneSection {
+    width: 50vw;
+    height: 300px;
+    margin: 10px;
+  }
+
+  .taskInput {
+    width: 60%;
+  }
+
+  .box-warpper {
+    flex-direction: row;
+  }
+
+  .task-wrapper {
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* Styles for desktops */
+  .openSection,
+  .progressSection,
+  .reviewSection,
+  .doneSection {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+  }
+
+  .taskInput {
+    width: 300px;
+  }
+
+  .box-warpper {
+    flex-direction: row;
+  }
+
+  .task-wrapper {
+    width: max-content;
+  }
+}

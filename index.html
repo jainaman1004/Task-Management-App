@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+
+    <script src="App.js" defer></script>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="how">
+        <h2>How To Use</h2>
+        <div class="note">
+          NOTE: Add Your All Task Fast Then Click On The Done Button
+        </div>
+
+        <h3>Step 1: Adding Tasks</h3>
+        <p>
+          To add a task, the user can enter a task in the input field and click
+          the "Add Task" button. The entered task will be added to the task
+          list.
+        </p>
+        <h3>Step 2: Editing Task Description</h3>
+        <p>
+          To edit the description of a task, the user can click on the task
+          text. A modal box will open where the user can enter or modify the
+          task description. Clicking the "Save" button will save the
+          description, and clicking the "Close" button will close the modal box.
+        </p>
+
+        <h3>Step 3: Moving Tasks</h3>
+        <p>
+          To move a task to a different section, the user can drag and drop the
+          task from one section to another. The app supports four sections:
+          "Open," "In Progress," "Review," and "Done." The tasks will be
+          visually moved to the corresponding sections as they are dragged and
+          dropped.
+        </p>
+        <h3>Step 4: Managing Tasks</h3>
+        <p>
+          The user can manage their tasks by adding, editing, moving, and
+          deleting them as needed. The app provides a simple and intuitive
+          interface for organizing and tracking tasks. That's it! With these
+          five steps, users can effectively use the task management app to stay
+          organized and keep track of their tasks.
+        </p>
+      </div>
+      <button id="toggleHowButton">Hide/Show Instructions</button>
+      <h1 id="heading">TASK MANAGEMENT APP</h1>
+      <div class="task-wrapper">
+        <input type="text" placeholder="Enter Your Task" class="taskInput" />
+        <button class="addBtn">Add Task</button>
+        <button class="done">Done</button>
+      </div>
+      <div id="modalBox"></div>
+      <div class="box-warpper">
+        <div class="openSection">
+          <h3>Open</h3>
+          <ul
+            id="openSection-ul"
+            class="container"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          ></ul>
+        </div>
+        <div class="progressSection">
+          <h3>Progress</h3>
+          <ul
+            id="progressSection-ul"
+            class="container"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          ></ul>
+        </div>
+        <div class="reviewSection">
+          <h3>Review</h3>
+          <ul
+            id="reviewSection-ul"
+            class="container"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          ></ul>
+        </div>
+        <div class="doneSection">
+          <h3>Done</h3>
+          <ul
+            id="doneSection-ul"
+            class="container"
+            ondragover="allowDrop(event)"
+            ondrop="drop(event)"
+          ></ul>
+        </div>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="styles.css" />
+  </body>
+</html>
